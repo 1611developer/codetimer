@@ -1,4 +1,4 @@
-.mood-date {
+.session-date {
     display: flex;
     flex-direction: column;
     width: 5.5rem;
@@ -11,16 +11,16 @@
     justify-content: center;
   }
   
-  .mood-date__month {
+  .session-date__month {
     font-size: 0.75rem;
     /* font-weight: bold; */
   }
   
-  .mood-date__year {
+  .session-date__year {
     font-size: 0.75rem;
   }
   
-  .mood-date__day {
+  .session-date__day {
     font-size: 1.5rem;
     font-weight: bold;
   }

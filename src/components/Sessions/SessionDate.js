@@ -1,6 +1,6 @@
-import "./MoodDate.css";
+import "./SessionDate.css";
 
-const MoodDate = (props) => {
+const SessionDate = (props) => {
   // const currentDate = new Date();
   // const cDay = props.currentDate.getDate();
   // const cMonth = props.currentDate.getMonth() + 1;
@@ -35,13 +35,13 @@ const MoodDate = (props) => {
   const time = new Intl.DateTimeFormat("en-US", options).format(props.date);
 
   return (
-    <div className="mood-date">
-      <div className="mood-date__year">{wDay}</div>
-      <div className="mood-date__month">{month}, {day}</div>
-      <div className="mood-date__year">{year}</div>
-      <div className="mood-date__year">{time}</div>
+    <div className="session-date">
+      <div className="session-date__year">{wDay}</div>
+      <div className="session-date__month">{month}, {day}</div>
+      <div className="session-date__year">{year}</div>
+      <div className="session-date__year">{time}</div>
     </div>
   );
 }
 
-export default MoodDate;
+export default SessionDate;
