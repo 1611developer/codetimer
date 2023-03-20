@@ -6,7 +6,6 @@ const Sessions = (props) => {
 
   return (
       <Card className="sessions">
-        <h1>CodeTimer.io</h1>
         <SessionItem
             date={props.items[0].date}
             session={props.items[0].session}
