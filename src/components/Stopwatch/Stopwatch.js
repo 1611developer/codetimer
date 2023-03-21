@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./Stopwatch.css";
+import React, { useState } from 'react'
+import './Stopwatch.css'
 
 const Stopwatch = () => {
   var sw = {
@@ -13,92 +13,92 @@ const Stopwatch = () => {
     // (B) INITIALIZE
     init: () => {
       // (B1) GET HTML ELEMENTS
-      sw.etime = document.getElementById("sw-time");
-      sw.erst = document.getElementById("sw-rst");
-      sw.ego = document.getElementById("sw-go");
+      sw.etime = document.getElementById('sw-time')
+      sw.erst = document.getElementById('sw-rst')
+      sw.ego = document.getElementById('sw-go')
 
       // (B2) ENABLE BUTTON CONTROLS
-      sw.erst.onclick = sw.reset;
-      sw.ego.onclick = sw.start;
-      sw.erst.disabled = false;
-      sw.ego.disabled = false;
+      sw.erst.onclick = sw.reset
+      sw.ego.onclick = sw.start
+      sw.erst.disabled = false
+      sw.ego.disabled = false
     },
 
     // (C) START!
     start: () => {
-      sw.timer = setInterval(sw.tick, 1000);
-      sw.ego.value = "Stop";
-      sw.ego.onclick = sw.stop;
+      sw.timer = setInterval(sw.tick, 1000)
+      sw.ego.value = 'Stop'
+      sw.ego.onclick = sw.stop
     },
 
     // (D) STOP
     stop: () => {
-      clearInterval(sw.timer);
-      sw.timer = null;
-      sw.ego.value = "Start";
-      sw.ego.onclick = sw.start;
+      clearInterval(sw.timer)
+      sw.timer = null
+      sw.ego.value = 'Start'
+      sw.ego.onclick = sw.start
     },
 
     // (E) TIMER ACTION
     tick: () => {
       // (E1) CALCULATE HOURS, MINS, SECONDS
-      sw.now++;
+      sw.now++
       let hours = 0,
         mins = 0,
         secs = 0,
-        remain = sw.now;
-      hours = Math.floor(remain / 3600);
-      remain -= hours * 3600;
-      mins = Math.floor(remain / 60);
-      remain -= mins * 60;
-      secs = remain;
+        remain = sw.now
+      hours = Math.floor(remain / 3600)
+      remain -= hours * 3600
+      mins = Math.floor(remain / 60)
+      remain -= mins * 60
+      secs = remain
 
       // (E2) UPDATE THE DISPLAY TIMER
       if (hours < 10) {
-        hours = "0" + hours;
+        hours = '0' + hours
       }
       if (mins < 10) {
-        mins = "0" + mins;
+        mins = '0' + mins
       }
       if (secs < 10) {
-        secs = "0" + secs;
+        secs = '0' + secs
       }
-      sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
+      sw.etime.innerHTML = hours + ':' + mins + ':' + secs
     },
 
     // (F) RESET
     reset: () => {
       if (sw.timer != null) {
-        sw.stop();
+        sw.stop()
       }
-      sw.now = -1;
-      sw.tick();
+      sw.now = -1
+      sw.tick()
     },
-  };
-  window.addEventListener("load", sw.init);
+  }
+  window.addEventListener('load', sw.init)
 
   return (
-    <div className="timer">
-      <div id="stopwatch">
+    <div className='timer'>
+      <div id='stopwatch'>
         <h4>Stopwatch</h4>
-        <div id="sw-time">00:00:00</div>
-        <div className="timer__actions">
+        <div id='sw-time'>00:00:00</div>
+        <div className='timer__actions'>
           <input
-            className="timer-button"
-            type="button"
-            value="Reset"
-            id="sw-rst"
+            className='timer-button'
+            type='button'
+            value='Reset'
+            id='sw-rst'
           ></input>
           &nbsp;
           <input
-            className="timer-button"
-            type="button"
-            value="Start"
-            id="sw-go"
+            className='timer-button'
+            type='button'
+            value='Start'
+            id='sw-go'
           ></input>
         </div>
       </div>
     </div>
-  );
-};
-export default Stopwatch;
+  )
+}
+export default Stopwatch

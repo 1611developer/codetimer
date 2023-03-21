@@ -1,12 +1,14 @@
-import SessionForm from './SessionForm';
-import './NewSession.css';
+import SessionForm from './SessionForm'
+import './NewSession.css'
 
 const NewSession = () => {
-    return <div>
-        <div className='new-session'>
-            <SessionForm />
-        </div>
+  return (
+    <div>
+      <div className='new-session'>
+        <SessionForm />
+      </div>
     </div>
-};
+  )
+}
 
-export default NewSession;
+export default NewSession
